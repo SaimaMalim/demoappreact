@@ -3,9 +3,9 @@ import axios from "axios";
 import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import {
-  selectedProduct,
+  selectedProducts,
   removeSelectedProduct,
-} from "../redux/actions/productsActions";
+} from "../redux/actions/productActions.js";
 const ProductDetail = () => {
   const { productId } = useParams();
   let product = useSelector((state) => state.product);
@@ -17,7 +17,7 @@ const ProductDetail = () => {
       .catch((err) => {
         console.log("Err: ", err);
       });
-    dispatch(selectedProduct(response.data));
+    dispatch(selectedProducts(response.data));
   };
 
   useEffect(() => {
