@@ -25,6 +25,7 @@ const ProductDetail = () => {
     return () => {
       dispatch(removeSelectedProduct());
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [productId]);
   return (
     <div className="ui grid container">
@@ -36,7 +37,7 @@ const ProductDetail = () => {
             <div className="ui vertical divider">AND</div>
             <div className="middle aligned row">
               <div className="column lp">
-                <img className="ui fluid image" src={image} />
+                <img className="ui fluid image" src={image} alt="sam" />
               </div>
               <div className="column rp">
                 <h1>{title}</h1>
